@@ -12,6 +12,7 @@ int add(int a,int b,int c){
 
 int main(void){
     int array1[3] = { 0 }, array2[3] = { 0 }, i;
+    srand((unsigned)time(NULL));
     for(i=0;i<3;i++){
         scanf("%d",&array1[i]);
     }
