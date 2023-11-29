@@ -74,7 +74,7 @@ void inputGenre(struct Bookstore *bookstore, char genreName[]){
     strcpy(bookstore->genres[bookstore->numGenres].name, genreName);
     bookstore->numGenres += 1;
     
-    printf("파일이 정상적으로 생성되었습니다.");
+    printf("파일이 정상적으로 생성되었습니다.\n\n");
 	fclose(file2);
 }
 
@@ -109,7 +109,7 @@ int main() {
     int num1, num2, numGenre, bookNum;
     char text;
     char genreName[50];
-    
+
     while(1){
         printf("선택하세요\n");
         printf("1. 책 서점에 추가하기\n");
@@ -137,7 +137,7 @@ int main() {
         }
 
         else if(num1 == 3){
-            for (int i = 0; i < bookstore.numGenres; ++i) {
+            for (int i = 0; i < bookstore.numGenres; i++) {
                 printf("%d. %s\n", i + 1, bookstore.genres[i].name);
             }
             printf("보고 싶은 장르의 번호를 적으세요: ");
@@ -145,7 +145,7 @@ int main() {
             printBooksInGenre(&bookstore.genres[numGenre - 1]);
             printf("보고 싶은 책 번호를 적으세요: ");
             scanf("%d",&bookNum);
-            printf("\n%s\n%s\n\n",bookstore.genres[numGenre - 1].books[bookNum-1].author,bookstore.genres[numGenre - 1].books[bookNum-1].content);
+            printf("\n%s\n%s\n\n",bookstore.genres[numGenre - 1].books[bookNum-1].author, bookstore.genres[numGenre - 1].books[bookNum-1].content);
             continue;
         }
 
